@@ -1045,7 +1045,12 @@ int dhdpcie_init(struct pci_dev *pdev)
 			}
 		} else {
 			/* Set ramdom MAC address during boot time */
-			get_random_bytes(&bus->dhd->mac.octet[3], 3);
+			//get_random_bytes(&bus->dhd->mac.octet[3], 3);
+			/* edp17 - start */
+			/* get_random_bytes(&bus->dhd->mac.octet[3], 3);*/
+			bus->dhd->mac.octet[3] = 0x47;
+			bus->dhd->mac.octet[4] = 0x4E;
+			bus->dhd->mac.octet[5] = 0x34;
 			/* Adding BRCM OUI */
 			bus->dhd->mac.octet[0] = 0;
 			bus->dhd->mac.octet[1] = 0x90;

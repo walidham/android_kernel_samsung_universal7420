@@ -169,7 +169,7 @@ static int max77833_rgb_number(struct led_classdev *led_cdev,
 
 	for (i = 0; i < 4; i++) {
 		if (led_cdev == &max77833_rgb->led[i]) {
-			pr_info("leds-max77833-rgb: %s, %d\n", __func__, i);
+			//pr_info("leds-max77833-rgb: %s, %d\n", __func__, i);
 			return i;
 		}
 	}

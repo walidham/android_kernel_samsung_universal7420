@@ -1929,7 +1929,7 @@ static struct mr_table *ipmr_rt_fib_lookup(struct net *net, struct sk_buff *skb)
 		.flowi4_oif = (rt_is_output_route(rt) ?
 			       skb->dev->ifindex : 0),
 		.flowi4_iif = (rt_is_output_route(rt) ?
-			       LOOPBACK_IFINDEX :
+			       net->loopback_dev->ifindex :
 			       skb->dev->ifindex),
 		.flowi4_mark = skb->mark,
 	};
